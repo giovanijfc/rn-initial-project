@@ -10,8 +10,16 @@ module.exports = {
     getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: false,
-        inlineRequires: true,
-      },
+        inlineRequires: false
+      }
     }),
-  },
-};
+    minifierConfig: {
+      keep_classnames: true, // Preserve class names
+      keep_fnames: true, // Preserve function names
+      mangle: {
+        keep_classnames: true, // Preserve class names
+        keep_fnames: true // Preserve function names
+      }
+    }
+  }
+}
